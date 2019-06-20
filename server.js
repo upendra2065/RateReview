@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(errorHandler());
 
-const url =  process.env.MONGOLAB_URI;
+const url =  "mongodb://rate-review:me2019,@ds137827.mlab.com:37827/mern-skeleton";
 mongoose.connect(url, { useNewUrlParser: true });
 
 app.use(express.static(path.join(__dirname, 'client/build'))); 
