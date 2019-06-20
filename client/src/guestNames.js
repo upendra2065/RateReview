@@ -78,14 +78,15 @@ class GuestNames extends Component{
     render() {
         const totalStars = (1*this.state.star1)+(2*this.state.star2)+(3*this.state.star3)+(4*this.state.star4)+(5*this.state.star5);
         const total = this.state.star1+this.state.star2+this.state.star3+this.state.star4+this.state.star5;
+        const rate= (1*totalStars)/10;
         return (
             <div  >
                 <div className="header">
                     <div className="ratings">
-                        <div className="totalStars">{parseFloat(totalStars/5).toFixed(1)}</div>
-                        <div className="starRatings">
+                        <div className="totalStars">{parseFloat(totalStars/total).toFixed(1)}</div>
+                        <div >
                             <StarRatings
-                                rating={(totalStars/5)}
+                                rating={rate}
                                 starEmptyColor="rgb(189, 189, 189, 0.5)"
                                 starRatedColor="rgba(129, 129, 129, 1)"
                                 starDimension='23px'
